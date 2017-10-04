@@ -14,7 +14,7 @@ nodejs
 - npm install -g @angular/cli
 - npm install
 - ng build
-- node start.js
+- node server.js
 
 url:
 - http://localhost:3000

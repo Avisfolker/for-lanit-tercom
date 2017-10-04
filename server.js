@@ -7,7 +7,7 @@ const app = express();
 let apiRoutes = express.Router();
 
 apiRoutes.use((req, res, next) => { //allow cross origin requests
-  res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+  res.setHeader("Access-Control-Allow-Methods",  "*");
 res.header("Access-Control-Allow-Origin", "http://localhost");
 res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 next();
@@ -36,21 +36,11 @@ app.get('*', (req, res) => {
 
 
 apiRoutes.get('/getSearch', (req, res) => { // получаем запрос
-   // 6230014f6230014f62158a6674626aaaf4662306230014f3ae3c1d8026399365abcbffb
+   // 4033e9204033e920406e50337340612122440334033e920189808ef9aa4f4e57a7694da
+  //6230014f6230014f62158a6674626aaaf4662306230014f3ae3c1d8026399365abcbffb
   console.log(req.query);
-  console.log(
-    'https://api.vk.com/method/newsfeed.search?' +
-    'q=%23' + req.query.searchWord + '&' +
-    'access_token=4033e9204033e920406e50337340612122440334033e920189808ef9aa4f4e57a7694da&' +
-    'count=10&' +
-    'v=5.68'
-
-  );
-  request.get('https://api.vk.com/method/newsfeed.search?' +
-    'q=%23' + req.query.searchWord + '&' +
-    'access_token=4033e9204033e920406e50337340612122440334033e920189808ef9aa4f4e57a7694da&' +
-    'count=10&' +
-    'v=5.68'
+  console.log('https://api.vk.com/method/newsfeed.search?q=%23' + req.query.searchWord + '&access_token=6230014f6230014f62158a6674626aaaf4662306230014f3ae3c1d8026399365abcbffb&count=10&v=5.68');
+  request.get('https://api.vk.com/method/newsfeed.search?q=%23' + req.query.searchWord + '&access_token=6230014f6230014f62158a6674626aaaf4662306230014f3ae3c1d8026399365abcbffb&count=10&v=5.68'
     ,(error,response,body) => {
       if (!error && response.statusCode === 200) {
         res.send(body);
