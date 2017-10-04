@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Добро пожаловать в {{title}}!
+  </h1></div>
+<h2>Поиск новостей по хештегу(#): </h2>
+<form #searchForm="ngForm" (ngSubmit)="setValue()">
+  <input required  name="searchWord" placeholder="Напишите слово" type="text" [(ngModel)]="searchWord"/>
+
+  <button type="submit" class="btn" [disabled]="!searchForm.form.valid" >Отрравить</button>
+</form>
+<br>
+<br>
+<div *ngIf="searchErr">{{searchErr}}</div>
+<ul>
+  <li *ngFor="let item of searchData">
+    <hr>
+    <div class="text">{{item.text}}</div>
+    <button class="btn" (click)="delValue(item.id)">Удалить</button>
+
+  </li>
+</ul>
+

@@ -1,0 +1,44 @@
+
+ul {
+  list-style: none;
+  list-style-position: outside;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  list-style-position: inside;
+}
+input {
+  height: 24px;
+  box-sizing: border-box;
+  margin-right: 15px;
+  float: left;
+}
+.btn {
+  background: #e7e6e6;
+  border: 1px solid #aaa;
+  font-size: 12px;
+  padding: 3px;
+  cursor: pointer;
+  height: 24px;
+  box-sizing: border-box;
+}
+.btn:hover {
+  background: #e7e6e6;
+}
+.text {
+  font-size: 14px;
+  margin: 0 0 10px  0;
+}
+hr {
+  background: #e7e6e6;
+  border: 0;
+  height: 2px;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+
